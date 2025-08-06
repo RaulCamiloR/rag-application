@@ -1,0 +1,23 @@
+
+import json
+# import os
+
+def lambda_handler(event, context):
+
+    prompt = json.loads(event['body'])['prompt'] 
+
+    response_body = {
+        "ok": True,
+        "texto": prompt
+    }
+    
+    return {
+        'statusCode': 200,
+        'headers': {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        },
+        'body': json.dumps(response_body)  
+    }

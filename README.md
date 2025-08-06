@@ -29,6 +29,7 @@ If you are a Windows platform, you would activate the virtualenv like this:
 
 ```
 % .venv\Scripts\activate.bat
+% desactivate
 ```
 
 Once the virtualenv is activated, you can install the required dependencies.
@@ -56,3 +57,11 @@ command.
  * `cdk docs`        open CDK documentation
 
 Enjoy!
+
+.\.venv\Scripts\activate
+
+deactivate
+
+pip install boto3 opensearch-py
+
+cdk deploy --all --profile=milo-simulator --region=us-east-1
